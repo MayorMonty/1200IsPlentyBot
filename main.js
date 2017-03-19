@@ -1,5 +1,3 @@
-var colors = require("colors");
-
 const authorize = require("./lib/authorize")
 const { readTemplate, compile } = require("./lib/template");
 const { saveDescription } = require("./lib/reddit")
