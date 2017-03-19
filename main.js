@@ -5,7 +5,7 @@ const { saveDescription } = require("./lib/reddit")
 const ora = require("ora");
 
 // Start the CI server
-require("./lib/ci")
+require("./lib/ci");
 
 
 var spinner = ora("Initalizing...").start();
