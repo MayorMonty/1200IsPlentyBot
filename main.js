@@ -6,6 +6,10 @@ const { saveDescription } = require("./lib/reddit")
 
 const ora = require("ora");
 
+// Start the CI server
+require("./lib/ci")
+
+
 var spinner = ora("Initalizing...").start();
 
 // Get authorized and read the template at the same time
