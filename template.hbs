@@ -1,2 +1,7 @@
-Hello Template!
-{{ getCell "G3" }}
+# Testing {{ getCell "B3"  }}!
+
+Timestamp|Name|Walk/Run|Units|How Much|How Long (Days)
+---|---|---|---|---|---
+{{#getRows "A2:F116"}}
+  {{A}}|{{B}}|{{C}}|{{D}}|{{E}}|{{F}}
+{{/getRows}}
