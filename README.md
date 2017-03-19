@@ -38,16 +38,16 @@ Inside the `{{ ... }}`, there are currently two functions to get values from the
 Take a look at this example of `getRows`:
 
 ```handlebars
-  Timestamp|Name|Walk/Run|Units|How Much|How Long (Days)
-  ---|---|---|---|---|---
-  {{#getRows "A2:F116"}}
-    {{A}} | {{B}} | {{C}} | {{D}} | {{E}} | {{F}}
-  {{/getRows}}
+Timestamp|Name|Walk/Run|Units|How Much|How Long (Days)
+---|---|---|---|---|---
+{{#getRows "A2:F116"}}
+  {{A}} | {{B}} | {{C}} | {{D}} | {{E}} | {{F}}
+{{/getRows}}
 
 ```
 A little more complicated, but still pretty easy to understand. Here, I'm using Reddit's Table syntax to transpose a range from the spreadsheet into the sidebar! Up a the top, you can see the table header:
 
-```handlebars
+```markdown
 Timestamp|Name|Walk/Run|Units|How Much|How Long (Days)
 ---|---|---|---|---|---
 ```
