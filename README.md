@@ -29,7 +29,7 @@ Finally, run
 When editing the [template file](https://github.com/MayorMonty/1200IsPlentyBot/blob/master/template.hbs), there is a simple syntax to collect the data from the spreadsheet. Remember that, aside from the template syntax, this format is [Reddit Markdown](https://www.reddit.com/r/reddit.com/comments/6ewgt/reddit_markdown_primer_or_how_do_you_do_all_that/), the normal formatting that you use on Reddit. Take a look at the following simple example:
 
 ```handlebars
-  # Hello {{ getCell "A1" }}!
+# Hello {{ getCell "A1" }}!
 ```
 Pretty simple, right? The `{{ getCell "A1" }}` gets the A1 cell, and uses its value there. Anything between `{{` and `}}` indicates to the template parser that this is a value it should replace.
 
