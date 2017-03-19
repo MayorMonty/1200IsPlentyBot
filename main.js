@@ -36,6 +36,6 @@ Promise.all([
           spinner = ora("Waiting for cooldown...").start();
         })
         .catch(e => spinner.fail(e) && process.exit(1));
-    }, 1000 * 10) // <== Update every 30 seconds
+    }, 1000 * 30) // <== Update every 30 seconds
   })
   .catch(e => spinner.fail(e))
