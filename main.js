@@ -6,28 +6,34 @@ const { saveDescription } = require("./lib/reddit")
 
 const ora = require("ora");
 
-const spinner = ora("Initalizing...").start();
+var spinner = ora("Initalizing...").start();
 
 // Get authorized and read the template at the same time
 Promise.all([
-  authorize(),
+  authorize(spinner),
   readTemplate("template.hbs")
 ])
   // Schedule rewrites from the spreadsheet
   .then(function(res) {
-    spinner.text = "Starting update schedule..."
+    spinner.succeed()
+    spinner = ora("Starting update schedule...").start();
     let [auth, template] = res;
     setInterval(function() {
-      spinner.text = "Compiling template..."
+      spinner.succeed()
+      spinner = ora("Compiling template...").start();
       // Recompile the template, and save the result
       compile(template, auth)
         .then(template => {
-          spinner.text = "Updating subreddit..."
+          spinner.succeed()
+          spinner = ora("Uploading template...").start();
           return template
         })
-        .then(saveDescription("1200isplentyketo"))
-        .then(() => spinner.text = "Uploaded! Waiting for cooldown...")
-        .catch(console.error);
+        .then(saveDescription("MayorMonty"))
+        .then(() => {
+          spinner.succeed()
+          spinner = ora("Waiting for cooldown...").start();
+        })
+        .catch(e => spinner.fail(e) && process.exit(1));
     }, 1000 * 10) // <== Update every 30 seconds
   })
-  .catch(console.log)
+  .catch(e => spinner.fail(e))
