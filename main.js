@@ -30,7 +30,7 @@ Promise.all([
           spinner = ora("Uploading template...").start();
           return template
         })
-        .then(saveDescription("MayorMonty"))
+        .then(saveDescription("1200isplentyketo")
         .then(() => {
           spinner.succeed()
           spinner = ora("Waiting for cooldown...").start();
